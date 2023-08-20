@@ -1,7 +1,5 @@
 const arrows = document.querySelectorAll(".arrows");
 const products = document.querySelector(".products");
-// const widthItem = document.querySelector(".product-item").offsetWidth;
-// const widthItem = document.querySelector(".product-item").offsetWidth;
 const productContainer = document.querySelector(".product-container");
 const cartContainer = document.querySelector(".cart-container");
 const bag = document.querySelector(".bag");
@@ -13,39 +11,6 @@ const total = document.querySelector(".total");
 const clearCart = document.querySelector(".clear-cart");
 let cart = [];
 let btns;
-// let productPerView = Math.round(products.offsetWidth / widthItem);
-// let isDragging = false,
-//   startX,
-//   startScrollLeft;
-
-// arrows.forEach((arrow) => {
-//   arrow.addEventListener("click", (arrow) => {
-//     products.scrollLeft += arrow.target.classList.contains("fa-arrow-right")
-//       ? widthItem
-//       : -widthItem;
-//   });
-// });
-
-// let dragging = (event) => {
-//   if (!isDragging) return;
-//   products.scrollLeft = startScrollLeft - (event.pageX - startX);
-// };
-
-// let startDragging = (event) => {
-//   isDragging = true;
-//   products.classList.add("dragging");
-//   startX = event.pageX;
-//   startScrollLeft = products.scrollLeft;
-// };
-
-// let stopDragging = (event) => {
-//   isDragging = false;
-//   products.classList.remove("dragging");
-// };
-
-// productContainer.addEventListener("mousemove", dragging);
-// productContainer.addEventListener("mousedown", startDragging);
-// productContainer.addEventListener("mouseup", stopDragging);
 
 class Products {
   async getProducts() {
