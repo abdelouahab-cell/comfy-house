@@ -1,0 +1,302 @@
+@import url("https://fonts.googleapis.com/css?family=Lato:400,700");
+
+:root {
+  --primaryColor: #f09d51;
+  --mainWhite: #fff;
+  --mainBlack: #222;
+  --mainGrey: #ececec;
+  --mainSpacing: 0.1rem;
+  --mainTransition: all 0.3s linear;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+body {
+  color: var(--mainBlack);
+  background: var(--mainWhite);
+  font-family: "Lato", sans-serif;
+}
+.main-title {
+  text-align: center;
+  font-size: 2rem;
+  text-transform: capitalize;
+  padding: 3rem 0;
+}
+
+/*------------------ Navbar ------------------*/
+.navbar {
+  height: 60px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  background-color: var(--mainGrey);
+}
+.navbar-item {
+  margin: 0 auto;
+  width: 90vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.navbar-item span i {
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+.navbar-item .logo img {
+  width: 100%;
+}
+.navbar-item .bag {
+  position: relative;
+  cursor: pointer;
+}
+.navbar-item .bag .item-count {
+  position: absolute;
+  top: -10px;
+  right: -8px;
+  background: var(--primaryColor);
+  padding: 0 5px;
+  border-radius: 30%;
+  color: var(--mainWhite);
+}
+
+/*------------------ End of Navbar ------------------*/
+/*------------------ Header ------------------*/
+.header {
+  height: calc(100vh - 60px);
+  background: url("/images/hero-bcg.jpeg") center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.header-title {
+  text-align: center;
+  background-color: rgb(255, 255, 255, 0.7);
+  padding: 2rem;
+}
+.header-title h2 {
+  font-size: 3rem;
+  text-transform: uppercase;
+  letter-spacing: var(--mainSpacing);
+  margin-bottom: 1em;
+}
+.btn {
+  display: block;
+  background-color: var(--primaryColor);
+  margin: auto;
+  font-size: 1.5em;
+  text-transform: capitalize;
+  letter-spacing: var(--mainSpacing);
+  color: var(--mainWhite);
+  border: none;
+  border-radius: 5px;
+  padding: 0.75em 2em;
+  cursor: pointer;
+}
+#btn {
+  text-decoration: none;
+}
+
+/*------------------ End of Header ------------------*/
+/*------------------ Start Products ------------------*/
+.product-container {
+  position: relative;
+  padding: 2rem;
+}
+.product-container .fa-arrow-right,
+.product-container .fa-arrow-left {
+  position: absolute;
+  top: 50%;
+  transform: translatey(-50%);
+  background: var(--primaryColor);
+  color: var(--mainWhite);
+  padding: 10px;
+  border-radius: 50%;
+  font-size: 1.3rem;
+  z-index: 10;
+  text-align: center;
+  line-height: 20px;
+  box-shadow: 1px 1px 3px rgb(0, 0, 0, 0.5);
+  cursor: pointer;
+}
+.product-container .fa-arrow-right {
+  right: 0.5%;
+}
+.product-container .fa-arrow-left {
+  left: 0.5%;
+}
+.products {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+.products.dragging {
+  scroll-snap-type: none;
+  scroll-behavior: auto;
+}
+.products.dragging .product-item {
+  user-select: none;
+}
+.products.dragging img {
+  pointer-events: none;
+}
+.products .product-item {
+  min-width: 250px;
+  text-align: center;
+  scroll-snap-align: start;
+}
+.products .product-image {
+  position: relative;
+  overflow: hidden;
+}
+.product-image img {
+  user-select: none;
+  /* cursor: grab; */
+  width: 100%;
+  object-fit: cover;
+  transition: var(--mainTransition);
+}
+.product-image .add-to-cart {
+  position: absolute;
+  bottom: 20%;
+  right: 0;
+  transform: translateX(100%);
+  padding: 10px;
+  border: none;
+  background-color: var(--primaryColor);
+  text-transform: uppercase;
+  letter-spacing: var(--mainSpacing);
+  transition: var(--mainTransition);
+  cursor: pointer;
+}
+.product-image .add-to-cart:hover {
+  color: var(--mainWhite);
+}
+.product-image:hover img {
+  opacity: 0.5;
+}
+.product-image:hover .add-to-cart {
+  transform: translateX(0);
+}
+.product-image .add-to-cart i {
+  padding-right: 8px;
+}
+.product-item .product-title {
+  font-size: 1.3rem;
+  padding: 1rem;
+  text-transform: capitalize;
+}
+.product-item .product-price {
+  color: var(--primaryColor);
+  letter-spacing: var(--mainSpacing);
+  font-weight: 600;
+}
+
+/*------------------ End Products ------------------*/
+/*------------------ Start cart ------------------*/
+.cart-items {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 450px;
+  height: 100%;
+  padding: 2rem;
+  z-index: 10;
+  background-color: var(--mainGrey);
+  overflow: auto;
+  transform: translateX(100%);
+  transition: var(--mainTransition);
+}
+.show-cart-items {
+  transform: translateX(0);
+}
+.overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: hsl(29deg 84% 63% / 50%);
+}
+.show-overlay {
+  display: block;
+}
+.cart-items .close {
+  display: block;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+}
+.cart-items .close i {
+  font-size: 1.7rem;
+  cursor: pointer;
+}
+.cart-title {
+  font-size: 1.5rem;
+  text-transform: capitalize;
+  text-align: center;
+  padding: 20px 0;
+}
+.cart-container {
+  display: grid;
+  gap: 18px;
+}
+.cart-container .cart {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  width: 100%;
+}
+.cart .cart-image {
+  width: 80px;
+}
+.cart .cart-image img {
+  max-width: 100%;
+  aspect-ratio: 12/10;
+}
+.cart-content {
+  padding: 0 20px;
+}
+.cart-content h4 {
+  text-transform: capitalize;
+  letter-spacing: var(--mainSpacing);
+}
+.cart-content .price {
+  display: block;
+  font-weight: 600;
+  padding: 7px 0;
+}
+.cart-content .remove {
+  background: transparent;
+  border: none;
+  color: var(--mainBlack);
+  font-size: 14px;
+  cursor: pointer;
+}
+.cart-counter {
+  display: inline-grid;
+  text-align: center;
+}
+.cart-counter i {
+  cursor: pointer;
+  color: var(--primaryColor);
+}
+.total-price {
+  text-align: center;
+  padding: 25px 0;
+  font-size: 1.3rem;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+@media (max-width: 500px) {
+  .cart-items {
+    width: 100%;
+    font-size: 14px;
+  }
+  .cart .cart-image {
+    width: 70px;
+  }
+}
+/*------------------ End cart ------------------*/

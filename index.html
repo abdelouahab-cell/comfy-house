@@ -1,0 +1,96 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="veiwport" content="width=device-width, initial-scale=1.0">
+        <!-- ADD FONTAWESOME-->
+        <script src="https://kit.fontawesome.com/55257f29e7.js" crossorigin="anonymous"></script>
+        <!-- ADD STYLE CSS-->
+        <link rel="stylesheet" href="style.css">
+        <!-- ADD JAVASCRIPT FILE-->
+        <script src="app.js" defer></script>
+
+        <title>comfy house</title>
+    </head>
+    <body>
+        <!--navbar-->
+        <nav class="navbar">
+            <div class="navbar-item">
+                <span>
+                    <i class="fa-solid fa-bars"></i>
+                </span>
+                <div class="logo">
+                    <img src="/images/logo.svg" alt="comfy house">
+                </div>
+                <div class="bag">
+                    <span>
+                        <i class="fa-solid fa-cart-plus"></i>
+                    </span>
+                    <span class="item-count">0</span>
+                </div>
+            </div>
+        </nav>
+        <!--End of navbar-->
+        <!--header-->
+        <header class="header">
+            <div class="header-title">
+                <h2>furniture collection</h2>
+                <a href="#our-products" id="btn"><button class="btn">shop now</button></a>
+            </div>
+        </header>
+        <!--End of header-->
+        <!--Start products-->
+        <section id="our-products">
+            <div class="main-title">
+                <h2>our products</h2>
+            </div>
+            <div class="product-container">
+                <!-- <i class="fa-solid fa-arrow-left arrows"></i> -->
+                <div class="products">
+                    <!--just for reference-->
+                    <!-- <div class="product-item" id="">
+                        <div class="product-image">
+                            <img src="/images/product-1.jpeg" alt="product-1">
+                            <button class="add-to-cart">
+                                <i class="fas fa-shopping-cart"></i>
+                                add to cart</button>
+                        </div>
+                        <h3 class="product-title">queen panel bed</h3>
+                        <span class="product-price">$ 100.99</span>
+                    </div> -->
+                </div>
+                <!-- <i class="fa-solid fa-arrow-right arrows"></i> -->
+            </div>
+        </section>
+        <!--End products-->
+        <!--Start cart-->
+        <div class="overlay"></div>
+        <sidebar class="cart-items">
+            <span class="close"><i class="fa-regular fa-circle-xmark"></i></span>
+            <h3 class="cart-title">your cart</h3>
+            <div class="cart-container">
+                <!--just for reference-->
+                <!-- <div class="cart">
+                    <div class="cart-image">
+                        <img src="/images/product-2.jpeg" alt="">
+                    </div>
+                    <div class="cart-content">
+                        <h4>single panel bed</h4>
+                        <span class="price">$22.99</span>
+                        <button class="remove">remove</button>
+                    </div>
+                    <div class="cart-counter">
+                        <i class="fa-solid fa-chevron-up"></i>
+                        <span class="counter">2</span>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </div>
+                </div> -->
+                
+            </div>
+            <div class="total-price">your total : <span class="total">$ 0</span></div>
+            <button class="clear-cart btn">clear cart</button>
+        </sidebar>
+        <!--End cart-->
+
+    </body>
+</html>
