@@ -15,7 +15,7 @@ let btns;
 class Products {
   async getProducts() {
     try {
-      let product = await fetch("/products.json");
+      let product = await fetch("products.json");
       let result = await product.json();
       let data = result.items;
 
